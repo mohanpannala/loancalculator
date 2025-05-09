@@ -1,25 +1,62 @@
-import logo from './logo.svg';
+// import React from 'react';
+// import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+// import { CssBaseline } from '@mui/material';
+// import { ColorModeProvider } from './contexts/ColorModeContext.js';
+// import ExchangeRates from './components/ExchangeRates';
+// import ErrorBoundary from './components/ErrorBoundary';
+// import Navbar from './components/Navbar';
+// import LoanCalculator from './components/LoanCalculator';
+// import About from './components/About';
+// import ErrorPage from './pages/ErrorPage';
+
+
+// const App = () => (
+  
+//   <ColorModeProvider>
+//     <CssBaseline />
+//     <ErrorBoundary>
+//       <Router>
+//         <Navbar />
+//         <Routes>
+//           <Route path="/" element={<LoanCalculator />} />
+//           <Route path="/about" element={<About />} />
+//           <Route path="*" element={<ErrorPage />} />
+//           <Route path="/exchange-rates" element={<ExchangeRates />} />
+//           <Route path="/errorpage" element={<ErrorPage />} />
+//         </Routes>
+//       </Router>
+//     </ErrorBoundary>
+//   </ColorModeProvider>
+// );
+
+// export default App;
+
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { ColorModeProvider } from './contexts/ColorModeContext'; // updated context using plain CSS
+import ExchangeRates from './components/ExchangeRates';
+import ErrorBoundary from './components/ErrorBoundary';
+import Navbar from './components/Navbar';
+import LoanCalculator from './components/LoanCalculator';
+import About from './components/About';
+import ErrorPage from './pages/ErrorPage';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const App = () => (
+  <ColorModeProvider>
+    <ErrorBoundary>
+      <Router>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<LoanCalculator />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/exchange-rates" element={<ExchangeRates />} />
+          <Route path="/errorpage" element={<ErrorPage />} />
+          <Route path="*" element={<ErrorPage />} />
+        </Routes>
+      </Router>
+    </ErrorBoundary>
+  </ColorModeProvider>
+);
 
 export default App;

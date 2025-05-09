@@ -1,0 +1,21 @@
+.about-container {
+    max-width: 768px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .about-box {
+    margin-top: 40px;
+  }
+  
+  .about-title {
+    font-size: 2rem;
+    margin-bottom: 16px;
+    font-weight: bold;
+  }
+  
+  .about-text {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+  

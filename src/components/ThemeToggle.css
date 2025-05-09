@@ -1,0 +1,21 @@
+.theme-toggle-btn {
+    background: transparent;
+    border: none;
+    font-size:34px;
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 100;
+
+    }
+  
+  .dark-mode .theme-toggle-btn {
+    color: #fff;
+    background-color: #444;
+  }
+  
+  .dark-mode .theme-toggle-btn:hover {
+    background-color: #555;
+  }
+  
